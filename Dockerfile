@@ -9,5 +9,4 @@ RUN mkdir /jexus \
     && rm -rf jexus
 ADD ./src /var/www/default
 EXPOSE 80
-ENTRYPOINT ["/usr/jexus/jws", "start"]
-CMD ["-D"]
+ENTRYPOINT /usr/jexus/jws start && tail -f /usr/jexus/log/jws.log
